@@ -42,5 +42,29 @@ export default Ember.Controller.extend({
     		console.log('Turning off metawear LED');
     		metawear.stop(true);
 		},
+		metawear_strobe: function ()
+		{
+			console.log('turning on the strobe');
+			for(var i=0; i<5; ++i)
+			{
+				metawear.setLED(metawear.COLOR.RED);
+    			metawear.play(true);
+    			metawear.stop(true);
+    			metawear.setLED(metawear.COLOR.BLUE);
+    			metawear.play(true);
+    			metawear.stop(true);
+    			metawear.setLED(metawear.COLOR.GREEN);
+    			metawear.play(true);
+    			metawear.stop(true);
+    			metawear.setLED(metawear.COLOR.RED);
+    			metawear.setLED(metawear.COLOR.BLUE);
+    			metawear.play(true);
+    			metawear.stop(true);
+    			metawear.setLED(metawear.COLOR.GREEN);
+    			metawear.setLED(metawear.COLOR.BLUE);
+    			metawear.play(true);
+    			metawear.stop(true);
+			}
+		}
 	}
 });
